@@ -1,0 +1,31 @@
+<div *ngIf="suggestions.length == 0" class="no-data">
+	<h4>Nenhuma Sugestão Descartada encontrada</h4>
+	<i class="mdi mdi-dots-horizontal"></i>
+	<p><em>Sugestões Descartadas</em> são geradas ao remover uma <em>Sugestão</em>.</p>
+</div>
+
+<ul class="list">
+	<li *ngFor="let sug of suggestions; let last = last">
+		<a (click)="viewSuggestion(sug.id, viewSuggestionPanel)" >
+			<div class="padded-list">{{sug.label}}</div>
+		</a>
+	</li>
+</ul>
+
+<panel #viewSuggestionPanel
+	fullscreen="false" openOnLoad="false" [title]="activeSuggestion ? activeSuggestion.label : ''"
+		(onDelete)="delete()" [showDelete]="false">
+
+	<div class="btn-group">
+		<button (click)="redoDiscard(viewSuggestionPanel)"
+			class="btn secondary phone-7 tablet-7">
+			Mover para Sugestões
+		</button>
+
+		<button (click)="viewSuggestionPanel.doDelete()"
+			class="btn secondary phone-5 tablet-5">
+			Excluir
+		</button>
+	</div>
+
+</panel>

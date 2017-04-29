@@ -1,0 +1,198 @@
+// Overrides over Phonon Framework's styles
+
+.header-bar {
+	border-bottom-color: $color-primary-hover;
+	background-color: $color-primary;
+}
+
+.content {
+	margin-right: 0;
+	margin-bottom: $ads-height;
+	margin-left: 0;
+	padding-right: 16px;
+	padding-left: 16px;
+}
+
+.tabs {
+	.tab-items {
+		.tab-item {
+			color: $color-primary-light;
+			line-height: normal;
+			white-space: normal;
+
+			&.active {
+				color: $color-primary;
+				font-weight: bold;
+			}
+		}
+	}
+}
+
+.primary {
+	background-color: $color-primary !important;
+
+	&.btn-flat {
+		color: $color-primary !important;
+	}
+}
+
+.secondary {
+	background-color: $color-secondary;
+	color: $color-white;
+
+	&.btn-flat {
+		background-color: transparent;
+		color: $color-secondary;
+	}
+}
+
+.floating-action {
+	padding: 15px 16px;
+
+	&.bottom {
+		bottom: $ads-height + 16px;
+	}
+}
+
+.list {
+	.padded-list {
+		display: block;
+		padding-top: 12px;
+		padding-bottom: 12px;
+		line-height: 28px;
+	}
+
+	.padded-left {
+		margin-left: 67px;
+		padding-left: 0;
+	}
+
+	li {
+
+		.pull-left,
+		.pull-right {
+			width: 67px;
+		}
+
+	}
+}
+
+.panel,
+.panel-full {
+	z-index: $zindex-panels;
+
+	.content {
+		margin-bottom: 0;
+	}
+
+	.padded-full {
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+}
+
+.panel {
+	max-height: 70%;
+	margin-bottom: $ads-height;
+}
+
+.panel-full {
+	height: calc(100% - #{$ads-height});
+}
+
+.dialog {
+	z-index: $zindex-dialog;
+}
+
+.backdrop-dialog {
+	z-index: $zindex-dialog - 1;
+}
+
+// Icons
+.mdi::before,
+.mdi-24px::before {
+	height: 24px;
+	font-size: 24px;
+}
+
+.mdi-14px::before {
+	height: 14px;
+	font-size: 14px;
+}
+
+// Buttons
+
+a {
+	&.btn {
+		padding-top: 10px;
+		font-family: Helvetica Neue, Roboto, Segoe UI, sans-serif;
+		font-size: 16px;
+
+		&.btn-sm {
+			padding-top: 3px;
+		}
+	}
+}
+
+.btn {
+	.mdi {
+		vertical-align: middle;
+	}
+
+	&.btn-sm {
+		min-height: 32px;
+		font-size: 14px;
+	}
+}
+
+.btn-group {
+	display: flex;
+
+	.btn:not(:first-child) {
+		margin-left: 8px;
+	}
+}
+
+.form-group {
+	.btn {
+		padding-right: 0;
+		padding-left: 0;
+	}
+}
+
+// FORMS
+select,
+textarea,
+input[type] {
+	padding-left: 2px;
+}
+
+select:focus,
+textarea:focus,
+input[type]:focus {
+	border-bottom-width: 1px;
+}
+
+form {
+	p,
+	input,
+	label,
+	button,
+	select,
+	textarea {
+		font-size: 16px;
+	}
+}
+
+.radio,
+.checkbox {
+	&.left {
+		text-indent: 28px;
+
+		span {
+			right: none;
+			left: 0;
+		}
+	}
+}
+// END FORMS

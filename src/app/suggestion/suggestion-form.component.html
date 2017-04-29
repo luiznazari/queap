@@ -1,0 +1,38 @@
+<panel fullscreen="true" openOnLoad="true" [title]="suggestion.id ? suggestion.label: 'Nova sugestão'"
+	returnLink="/suggestions" [disabled]="sugestaoForm.form.invalid"
+	(onConfirm)="save()" (onDelete)="discard()" [showDelete]="suggestion.id"
+	deleteTitle="Descartar sugestão" deleteMessage='Tem certeza que deseja mover para "Sugestões descartadas"?'>
+
+	<form #sugestaoForm="ngForm" class="form-horizontal">
+		<div class="form-group">
+			<i class="form-icon mdi mdi-label-outline"></i>
+
+			<div class="form-elements">
+				<input [(ngModel)]="suggestion.label" (keyup)="executeHints()"
+					name="label" #label="ngModel"
+					placeholder="Sugestão *" type="text" id="suggestion-label" minlength="4" required>
+
+				<span *ngIf="label.invalid" class="form-msg text-danger">
+					A sugestão deve ter pelo menos 4 letras.
+				</span>
+			</div>
+		</div>
+	</form>
+
+	<div style="margin-top: 32px">
+		<div *ngIf="suggestion.isValid()" class="green">
+			<i class="mdi mdi-check"></i> <span>Passou em todas as regras</span>
+		</div>
+
+		<div *ngIf="!suggestion.isValid()">
+			<h4 class="stronger">Falhou para as regras</h4>
+			<ul class="list">
+				<li *ngFor="let result of suggestion.results | sort : 'constraint'"
+					class="padded-list">
+					{{result.constraint}}
+				</li>
+			</ul>
+		</div>
+	</div>
+
+</panel>

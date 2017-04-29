@@ -1,0 +1,25 @@
+{
+	"scripts": [
+		"core-js/client/shim.min.js",
+		"reflect-metadata/Reflect.js",
+		"zone.js/dist/zone.js",
+		"phonon/dist/js/phonon-core.min.js",
+		"phonon/dist/js/components/panels.min.js",
+		"phonon/dist/js/components/dialogs.min.js",
+		"/public/js/localstoragedb.min.js",
+		"/src/js/**"
+	],
+
+	"styles": [
+		"phonon/dist/css/phonon.min.css",
+		"mdi/css/materialdesignicons.min.css"
+	],
+
+	"fonts": [
+		"/public/fonts/OpenSans-Bold.ttf",
+		"/public/fonts/OpenSans-Regular.ttf",
+		"mdi/fonts/materialdesignicons-webfont.ttf",
+		"mdi/fonts/materialdesignicons-webfont.woff",
+		"mdi/fonts/materialdesignicons-webfont.woff2"
+	]
+}

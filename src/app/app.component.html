@@ -1,0 +1,35 @@
+<!--
+<th routerLinkActive="active" class="menu-settings">
+	<a [routerLink]="['/settings']">
+		<i class="menu-icon fa fa-ellipsis-v"></i>
+	</a>
+</th>
+-->
+
+<header class="header-bar">
+    <div class="center">
+        <h1 class="title">Qual é a palavra</h1>
+    </div>
+</header>
+<nav class="tabs header-tabs">
+    <div class="tab-items">
+        <a [routerLink]="['/suggestions']" routerLinkActive="active"
+			class="tab-item">
+			Sugestões
+		</a>
+		<a [routerLink]="['/hints']" routerLinkActive="active"
+			class="tab-item">
+			Dicas
+		</a>
+		<a [routerLink]="['/past-suggestions']" routerLinkActive="active"
+			class="tab-item">
+			Sugestões descartadas
+		</a>
+    </div>
+</nav>
+<div class="content" data-tab-contents="true" data-disable-swipe="false" data-tab-default="1">
+	<router-outlet></router-outlet>
+</div>
+
+<section class="ads bottom">
+</section>

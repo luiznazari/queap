@@ -1,0 +1,29 @@
+Cordova/PhoneGap plugin: [not used]
+ - Android
+ - iOS
+ - Windows 10 (UWP)
+
+LocalStorageDB:
+ - IE 8+
+ - Firefox 31+
+ - Chrome 31+
+ - Safari 7+
+ - iOS Safari 7.1+
+ - Android Browser 4.1+
+ - Chrome for Android 42+
+
+Phonon Framework:
+ - Android 4.1+
+ - iOS 7+
+ - IE 10+
+ - Chrome 30+
+ - Firefox 10+
+ - Opera 12+
+
+--------------------
+Supported Platforms:
+--------------------
+
+ - Android 4.1+
+ - iOS 7+
+ - Windows Phone 8.1+

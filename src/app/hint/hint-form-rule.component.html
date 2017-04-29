@@ -1,0 +1,25 @@
+<div [formGroup]="hintRuleForm">
+	<div class="width-80 pull-left">
+		<div class="form-select">
+			<select formControlName="constraint">
+				<option *ngFor="let cons of constraints"
+					[value]="cons.value">{{cons.label}}</option>
+			</select>
+		</div>
+
+		<div class="form-select phone-5 tablet-5 pull-left">
+			<select formControlName="pattern">
+				<option *ngFor="let pattern of patterns"
+					[value]="pattern.value">{{pattern.label}}</option>
+			</select>
+		</div>
+
+		<div class="phone-7 tablet-7 pull-left" style="padding-left: 8px;">
+			<input formControlName="text" type="text" placeholder="Texto">
+		</div>
+	</div>
+
+	<div class="width-20 pull-right">
+		<a (click)="doDelete($event)" class="mdi mdi-close form-element-delete"></a>
+	</div>
+</div>

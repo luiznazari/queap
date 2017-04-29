@@ -1,0 +1,48 @@
+$color-primary: #c06b23;
+$color-primary-light: #d4986a;
+$color-primary-hover: #9a4908;
+$color-secondary: #2f6d92;
+$color-secondary-hover: #064475;
+$color-tertialy: #506171;
+$color-tertialy-hover: #618ab2;
+$color-loading-bg: #dd8c4b;
+
+$color-white: #fff;
+$color-gray: #b1b6b9;
+$color-gray-light: #eee;
+$color-info: #31708f;
+$color-bg-info: #d9edf7;
+$color-success: #3c763d;
+$color-bg-success: #dff0d8;
+$color-warning: #8a6d3b;
+$color-bg-warning: #fcf8e3;
+$color-danger: #a94442;
+$color-bg-danger: #f2dede;
+
+// Bootstrap
+$bs-spacing: 15px;
+$bs-color-muted: #636c72;
+$bs-color-primary: #337ab7;
+$bs-color-primary-hover: #265a88;
+$bs-color-success: #5cb85c;
+$bs-color-success-hover: #449d44;
+$bs-color-info: #5bc0de;
+$bs-color-info-hover: #31b0d5;
+$bs-color-warning: #f0ad4e;
+$bs-color-warning-hover: #ec971f;
+$bs-color-danger: #a94442;
+$bs-color-danger-hover: #c9302c;
+
+// Phonon
+$pn-color-focus: #0084e7;
+
+// Z-Indexes
+$zindex-panels: 100 !default;
+$zindex-dialog: 200 !default;
+$zindex-fixed: 1030 !default;
+
+// Others
+$ads-height: 50px;
+
+@import 'global';
+@import 'phonon';

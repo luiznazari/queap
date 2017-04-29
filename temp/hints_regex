@@ -1,0 +1,81 @@
+// Possui as letras "g" e "h" juntas
+'gh'
+
+// Possui mais de uma palavra
+'\w\s+\w'
+
+// Possui duas palavras
+'^\w+(?:\s\w+){1}$'
+
+// A primeira palavra termina com "T"
+'^\w+t\b' // i
+
+// A segunda palavra termina com "s"
+'^\w+(?:\s\w+){1}s\b'
+
+ // Tudo - É igual a <Text>
+ '^<Text>$'
+
+ // Primeira palavra - É igual a <Text>
+ '^<Text>\b'
+
+ // Última palavra - Possui <Text>
+'\b\w*<Text>\w*$'
+
+ // Primeira palavra Não possui <Text>
+'\b\w*<Text>\w*$'
+
+ // Segunda palavra Não possui <Text>
+'^(?!(?:\w+\s){1}\b\w*<Text>\w*\b)'
+ // 1 == número palavra -1
+
+// Segunda palavra Não inicia com <Text>
+'^(?!(?:\w+\s){1}\b<Text>)'
+
+ // Segunda palavra Não termina com <Text>
+'^(?!(?:\w+\s){1}\w+<Text>\b)'
+
+ // Terceira palavra - Possui <Text>
+'^(?:\w+\s){1}\b\w*<Text>\w*\b'
+
+ // Terceira palavra - Inicia com <Text>
+'^(?:\w+\s){2}\b<Text>'
+
+ // Terceira palavra - Termina com <Text>
+'^(?:\w+\s){2}\w+<Text>\b'
+
+ // Última palavra - Não incia com <Text>
+'\b(?!<Text>)\w+$'
+
+ // Última palavra - Não termina com <Text>
+'\b(?!\w+<Text>)\w+$'
+
+// Tudo - Termina com <Text>
+'<Text>$'
+
+ // Tudo - Não termina com <Text>
+'^(?:(?!<Text>$).)*$'
+
+
+// =-=-=-=-=-=-=: Spliting words :=-=-=-=-=-=-=
+
+// É igual a <Text>
+'^<Text>$'
+
+// Possui <Text>
+'<Text>'
+
+// Inicia com <Text>
+'^(?=<Text>)'
+
+// Termina com <Text>
+'(?=<Text>$)'
+
+// Não possui <Text>
+'^(?:(?!<Text>).)*$'
+
+// Não incia com <Text>
+'^(?!<Text>)'
+
+// Não termina com <Text>
+'^(?:(?!<Text>$).)*$'

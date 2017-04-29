@@ -1,0 +1,22 @@
+<div *ngIf="hints.length == 0" class="no-data">
+	<h4>Nenhuma Dica encontrada</h4>
+	<i class="mdi mdi-dots-horizontal"></i>
+	<p>
+		<em>Dicas</em> determinam as regras para validar as <em>Sugestões</em>.
+		Para cadastrar uma <em>Dica</em>, clique no botão adicionar abaixo.
+	</p>
+</div>
+
+<ul class="list">
+	<li *ngFor="let hint of hints; let first = first; let last = last"
+		[routerLink]="['/hints/', hint.id]">
+		<i *ngIf="first" class="pull-left mdi mdi-chevron-right blue"></i>
+		<i *ngIf="!first && !hint.isObsolete()" class="pull-left mdi mdi-chevron-right"></i>
+		<i *ngIf="hint.isObsolete()" class="pull-left mdi mdi-info disabled"></i>
+		<span class="padded-list">{{hint.label}}</span>
+	</li>
+</ul>
+
+<a [routerLink]="['/hints/new']"
+	 class="floating-action bottom right active mdi mdi-plus primary">
+</a>

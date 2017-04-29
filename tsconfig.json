@@ -1,0 +1,24 @@
+{
+	"compilerOptions": {
+		"lib": [ "es2015", "dom" ],
+		"target": "es5",
+		"module": "commonjs",
+		"outDir": "mobile/www",
+		"moduleResolution": "node",
+		"sourceMap": true,
+		"noImplicitAny": true,
+		"noUnusedLocals": true,
+		"noImplicitReturns": true,
+		"noUnusedParameters": true,
+		"allowUnusedLabels": false,
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true,
+		"suppressImplicitAnyIndexErrors": true
+	},
+	"exclude": [
+		"config",
+		"mobile",
+		"node_modules",
+		"./node_modules"
+	]
+}

@@ -1,0 +1,286 @@
+// COLORS
+.red {
+	color: #e03f0d;
+}
+
+.green {
+	color: #3ea940;
+}
+
+.blue {
+	color: #2f6d92;
+}
+
+.text-white {
+	color: $color-white !important;
+}
+
+.text-muted {
+	color: $bs-color-muted !important;
+}
+
+.text-primary {
+	color: $bs-color-primary !important;
+}
+
+.text-success {
+	color: $bs-color-success !important;
+}
+
+.text-info {
+	color: $bs-color-info !important;
+}
+
+.text-warning {
+	color: $bs-color-warning !important;
+}
+
+.text-danger {
+	color: $bs-color-danger !important;
+}
+
+a {
+	&.text-primary:focus,
+	&.text-primary:hover {
+		color: $bs-color-primary-hover !important;
+	}
+
+	&.text-success:focus,
+	&.text-success:hover {
+		color: $bs-color-success-hover !important;
+	}
+
+	&.text-info:focus,
+	&.text-info:hover {
+		color: $bs-color-info-hover !important;
+	}
+
+	&.text-warning:focus,
+	&.text-warning:hover {
+		color: $bs-color-warning-hover !important;
+	}
+
+	&.text-danger:focus,
+	&.text-danger:hover {
+		color: $bs-color-danger-hover !important;
+	}
+}
+
+// END COLORS
+// NAVIGATION
+
+@font-face {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Open Sans'), local('OpenSans'), url('/fonts/OpenSans-Regular.ttf');
+}
+
+@font-face {
+	font-family: 'Open Sans Bold';
+	font-style: bold;
+	font-weight: 600;
+	src: local('Open Sans Bold'), local('OpenSansBold'), url('/fonts/OpenSans-Bold.ttf');
+}
+
+html,
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+body {
+	font-family: 'Open Sans';
+}
+
+// ADS
+.ads {
+	width: 100%;
+	height: $ads-height;
+	background-color: $color-tertialy;
+	z-index: $zindex-panels + 1;
+
+	&.bottom {
+		position: fixed;
+		top: auto;
+		bottom: 0;
+		box-shadow: 0 -1px 10px 1px #adadad;
+	}
+}
+// END ADS
+
+%clearfix::after {
+	display: block;
+	clear: both;
+	content: '';
+}
+
+.clearfix {
+	@extend %clearfix;
+}
+
+.hr {
+	width: 100%;
+	height: 1px;
+	margin: 0 auto;
+	background-color: #e4e4e4;
+}
+
+.space {
+	margin-top: $bs-spacing;
+	margin-bottom: $bs-spacing;
+
+	&.empty {
+		height: 1px;
+	}
+
+	&.xs {
+		margin-top: 8px;
+		margin-bottom: 8px;
+	}
+}
+
+.inner-space {
+	padding-top: $bs-spacing;
+	padding-bottom: $bs-spacing;
+}
+
+.shorten-text {
+	display: inline-block;
+	position: relative;
+	max-width: 100%;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.stronger {
+	font-weight: 600;
+}
+
+.content-loading {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: $color-loading-bg;
+}
+
+.width-100 {
+	width: 100%;
+}
+
+.width-80 {
+	width: 80%;
+}
+
+.width-20 {
+	width: 20%;
+}
+
+// FORMS
+
+.form-group {
+	@extend %clearfix;
+	position: relative;
+	margin-bottom: 8px;
+
+	.form-icon {
+		position: absolute;
+		top: 0;
+		left: 0;
+		padding: 8px;
+
+		&::before {
+			height: 32px;
+			color: $bs-color-muted;
+			font-size: 32px;
+			line-height: 32px;
+		}
+	}
+
+	.form-elements {
+		margin-left: 60px;
+	}
+
+	.form-element {
+		@extend %clearfix;
+
+		.form-element-delete {
+			display: block;
+			width: 100%;
+			height: 96px;
+			color: $color-gray;
+			line-height: 96px;
+			text-align: center;
+			vertical-align: middle;
+		}
+	}
+
+	.form-element:not(:last-child) {
+		margin-bottom: 16px;
+	}
+
+	.ng-invalid {
+		border-bottom-color: $bs-color-danger;
+	}
+
+}
+
+.form-msg {
+	display: block;
+	margin-top: 4px;
+}
+
+.form-select {
+	position: relative;
+
+	select {
+		padding-right: 20px;
+
+		:focus {
+			&+::after {
+				color: $pn-color-focus;
+			}
+		}
+	}
+
+	&::after {
+		position: absolute;
+		top: 0;
+		right: 0;
+		background-color: transparent;
+		color: $bs-color-muted;
+		font-family: 'Material Design Icons';
+		font-size: 20px;
+		line-height: 48px;
+		content: '\F140';
+		vertical-align: middle;
+		pointer-events: none;
+	}
+}
+
+// END FORMS
+
+.no-data {
+	color: $bs-color-muted;
+	text-align: center;
+
+	h4 {
+		margin: 30px 0 10px;
+		font-size: 16px;
+	}
+
+	i {
+		color: #bfbfbf;
+	}
+
+	p {
+		margin-top: 10px;
+		font-size: 14px;
+	}
+
+}

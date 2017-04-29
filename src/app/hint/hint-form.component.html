@@ -1,0 +1,37 @@
+<panel fullscreen="true" openOnLoad="true" [title]="hint.id ? 'Editar dica' : 'Nova dica'"
+	returnLink="/hints" [disabled]="this.hintForm.invalid"
+	(onConfirm)="save()" (onDelete)="delete()" [showDelete]="hint.id">
+
+	<form [formGroup]="hintForm" novalidate class="form-horizontal">
+
+		<div class="form-group">
+			<i class="form-icon mdi mdi-label-outline"></i>
+
+			<div class="form-elements">
+				<input formControlName="label" id="hintForm-label" [value]="composeLabel()"
+					name="label" placeholder="Título" type="text">
+
+				<label class="checkbox left">
+					<input formControlName="autoLabel" [(ngModel)]="autoLabel" (change)="toggleAutoLabel()" type="checkbox">
+					Criar título para regras <span></span>
+				</label>
+			</div>
+		</div>
+
+		<div class="form-group" formArrayName="rules">
+			<i class="form-icon mdi mdi-playlist-check"></i>
+
+			<div class="form-elements">
+				<div *ngFor="let rule of hintForm.controls.rules.controls; let i = index" [formGroupName]="i"
+					class="form-element">
+					<hint-form-rule [group]="hintForm.controls.rules.controls[i]" [index]="i"
+						(onDelete)="removeRule(i)"></hint-form-rule>
+				</div>
+				<a (click)="addRule()" class="btn btn-flat primary form-element">
+					<i class="mdi mdi-playlist-plus"></i> Nova regra
+				</a>
+			</div>
+		</div>
+
+	</form>	
+</panel>

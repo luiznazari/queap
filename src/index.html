@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<title>Qual é a palavra</title>
+		<meta name="description" content="Aplicativo para anotação de sugestões de palavras para jogos de adivinhação">
+
+		<meta charset="UTF-8">
+		<meta name="theme-color" content="#c06b23">
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, width=device-width">
+		<!--
+		'/' for Angular delepment and testing.
+		'./' for Cordova build.
+		-->
+		<base href="{{base_href}}">
+
+		<!--
+			Globals JS and CSS must be declared in 'index.globals.json'.
+		-->
+
+		<link rel="icon" href="resources/img/favicon.ico">
+		<link rel="stylesheet" href="css/globals.min.css">
+		<link rel="stylesheet" href="css/styles.min.css">
+
+		<script type="text/javascript" src="cordova.js"></script>
+		<script type="text/javascript" src="js/globals.min.js"></script>
+	</head>
+	<body>
+		<app>
+			<div class="content-loading"></div>
+		</app>
+
+		<script type="text/javascript" src="js/bundle.min.js"></script>
+	</body>
+</html>

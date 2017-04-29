@@ -1,0 +1,23 @@
+<div *ngIf="suggestions.length == 0" class="no-data">
+	<h4>Nenhuma Sugestão encontrada</h4>
+	<i class="mdi mdi-dots-horizontal"></i>
+	<p>
+		<em>Sugestões</em> são os seus palpites sobre as dicas dadas.
+		Para cadastrar uma <em>Sugestão</em>, clique no botão adicionar abaixo.
+	</p>
+</div>
+
+<ul class="list">
+	<li *ngFor="let sug of suggestions; let last = last"
+		[routerLink]="['/suggestions/', sug.id]">
+		<a>
+			<i *ngIf="sug.isValid()" class="pull-left mdi mdi-check green"></i>
+			<i *ngIf="!sug.isValid()" class="pull-left mdi mdi-close red"></i>
+			<div class="padded-list padded-left">{{sug.label}}</div>
+		</a>
+	</li>
+</ul>
+
+<a [routerLink]="['/suggestions/new']"
+	 class="floating-action bottom right active mdi mdi-plus primary">
+</a>
