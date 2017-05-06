@@ -30,6 +30,7 @@
     "@angular/router": "^4.0.2",
     "@angular/upgrade": "^4.0.2",
     "core-js": "^2.4.1",
+    "jquery": "^3.2.1",
     "mdi": "^1.8.36",
     "phonon": "^1.4.3",
     "reflect-metadata": "^0.1.10",

@@ -6,6 +6,7 @@
 		"phonon/dist/js/phonon-core.min.js",
 		"phonon/dist/js/components/panels.min.js",
 		"phonon/dist/js/components/dialogs.min.js",
+		"jquery/dist/jquery.min.js",
 		"/public/js/localstoragedb.min.js",
 		"/src/js/**"
 	],

@@ -1,9 +1,10 @@
 <div [id]="_id" class="{{fullscreen ? 'panel-full' : 'panel'}}">
 	<header class="header-bar">
-		<button (click)="close()" class="btn pull-left mdi mdi-{{fullscreen ? 'arrow-left' : 'close'}}"></button>
-		<button *ngIf="onConfirm.observers.length"
+		<button (click)="close()" data-ripple
+			class="btn pull-left mdi mdi-{{fullscreen ? 'arrow-left' : 'close'}}"></button>
+		<button *ngIf="onConfirm.observers.length" data-ripple
 			(click)="doConfirm()" [disabled]="disabled" class="btn pull-right mdi mdi-check"></button>
-		<button *ngIf="showDelete"
+		<button *ngIf="showDelete" data-ripple
 			(click)="doDelete()" class="btn pull-right mdi mdi-delete"></button>
 		<h1 class="title pull-left shorten-text" style="width: 60%">{{title}}</h1>
 	</header>

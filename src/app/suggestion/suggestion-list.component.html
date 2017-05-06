@@ -10,7 +10,7 @@
 <ul class="list">
 	<li *ngFor="let sug of suggestions; let last = last"
 		[routerLink]="['/suggestions/', sug.id]">
-		<a>
+		<a class="relative" data-ripple>
 			<i *ngIf="sug.isValid()" class="pull-left mdi mdi-check green"></i>
 			<i *ngIf="!sug.isValid()" class="pull-left mdi mdi-close red"></i>
 			<div class="padded-list padded-left">{{sug.label}}</div>
@@ -18,6 +18,6 @@
 	</li>
 </ul>
 
-<a [routerLink]="['/suggestions/new']"
+<a [routerLink]="['/suggestions/new']" data-ripple="light"
 	 class="floating-action bottom right active mdi mdi-plus primary">
 </a>

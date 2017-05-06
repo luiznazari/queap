@@ -74,6 +74,10 @@
 			width: 67px;
 		}
 
+		a:active {
+			background-color: inherit;
+		}
+
 	}
 }
 
@@ -102,6 +106,14 @@
 
 .dialog {
 	z-index: $zindex-dialog;
+
+	.padded-full {
+		margin-bottom: 16px;
+	}
+
+	p {
+		font-size: 16px;
+	}
 }
 
 .backdrop-dialog {

@@ -10,10 +10,12 @@
 <ul class="list">
 	<li *ngFor="let hint of hints; let first = first; let last = last"
 		[routerLink]="['/hints/', hint.id]">
-		<i *ngIf="first" class="pull-left mdi mdi-chevron-right blue"></i>
-		<i *ngIf="!first && !hint.isObsolete()" class="pull-left mdi mdi-chevron-right"></i>
-		<i *ngIf="hint.isObsolete()" class="pull-left mdi mdi-info disabled"></i>
-		<span class="padded-list">{{hint.label}}</span>
+		<a class="relative" data-ripple>
+			<i *ngIf="first" class="pull-left mdi mdi-chevron-right blue"></i>
+			<i *ngIf="!first && !hint.isObsolete()" class="pull-left mdi mdi-chevron-right"></i>
+			<i *ngIf="hint.isObsolete()" class="pull-left mdi mdi-info disabled"></i>
+			<span class="padded-list">{{hint.label}}</span>
+		</a>
 	</li>
 </ul>
 

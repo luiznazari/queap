@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { componentUtils } from '../.././core/utils';
+import { ComponentUtils } from '../.././core/utils';
 
 @Component({
 	moduleId: module.id,
@@ -26,7 +26,7 @@ export class PanelComponent implements AfterViewInit {
 	@Output() onDelete = new EventEmitter();
 
 	constructor(router: Router) {
-		this._id = componentUtils.generateId();
+		this._id = ComponentUtils.generateId();
 		this._router = router;
 	}
 

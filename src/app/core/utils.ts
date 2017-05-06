@@ -1,10 +1,10 @@
-export const componentUtils = {
+export class ComponentUtils {
 
-	generateId(): string {
+	static generateId(): string {
 		return '_' + Math.random().toString(36).substr(2, 9);
 	}
 
-};
+}
 
 function isInputFilled(input: HTMLInputElement) {
 	let parent = input.parentElement;

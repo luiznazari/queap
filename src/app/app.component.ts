@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, enableProdMode } from '@angular/core';
 import { DataBase } from './core/persistence';
 
 @Component({
@@ -9,6 +9,10 @@ import { DataBase } from './core/persistence';
 export class AppComponent {
 
 	constructor() {
+		if (queap.properties.prod) {
+			enableProdMode();
+		}
+
 		log.info('[AppComponent] Starting database migration...');
 		let migrated = DataBase.migrate();
 		if (migrated) {

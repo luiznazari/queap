@@ -24,6 +24,7 @@ gulp.task('copy:html', function() {
 	let baseHref = GULP_ENV.cordovaBuild ? './' : '/';
 	return gulp.src(paths.appIndexHtml)
 		.pipe(replace('{{base_href}}', baseHref))
+		.pipe(replace('{{properties_json}}', JSON.stringify(GULP_ENV)))
 		.pipe(cleanHTML())
 		.pipe(gulp.dest(paths.appBuildResources));
 });

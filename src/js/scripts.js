@@ -97,4 +97,63 @@
 		return Array.isArray(value) ? value : [ value ];
 	}
 
+	// RIPPLE EFFECT
+	function applyRippleEffect(event) {
+		event = event.originalEvent || event;
+		var $self = $(this);
+
+		// Remove previous ripple elements, if any.
+		$self.children('.ripple').detach();
+
+		var offset = this.getBoundingClientRect();
+		var buttonWidth = this.clientWidth;
+		var buttonHeight = this.clientHeight;
+
+		// Make it round!
+		if (buttonWidth >= buttonHeight) {
+			buttonHeight = buttonWidth;
+		} else {
+			buttonWidth = buttonHeight; 
+		}
+		
+		var pageX;
+		var pageY;
+		// Get event's x and y. Ripple event will start at this point.
+		if (event.touches && event.touches.length > 0) {
+			pageX = event.touches[0].pageX;
+			pageY = event.touches[0].pageY;
+		} else {
+			pageX = event.pageX;
+			pageY = event.pageY;
+		}
+		
+		var rippleColor = $self.data('ripple');
+		if (!rippleColor || rippleColor === 'dark') {
+			rippleColor = 'rgba(0, 0, 0, .1)';
+		} else if (rippleColor === 'light') {
+			rippleColor = 'rgba(255, 255, 255, .4)';
+		}
+
+		// Create and prepernd ripple element.
+		var $span = $('<span>').addClass('ripple').css({
+			'top': pageY - offset.top - buttonHeight / 2,
+			'left': pageX - offset.left - buttonWidth / 2,
+			'width': buttonWidth,
+			'height': buttonHeight,
+			'background-color': rippleColor
+		});
+		$self.prepend($span);
+
+		// Start ripple effect from element.
+		$span.addClass('ripple-effect');
+	};
+
+	$(window).ready(function() {
+		var $body = $('body');
+		$body.on('touchstart', '[data-ripple]', function (event) {
+			$body.off('mousedown', '[data-ripple]');
+			applyRippleEffect.call(this, event);
+		}).on('mousedown', '[data-ripple]', applyRippleEffect);
+	});
+
 }(typeof window !== 'undefined' ? window : this));

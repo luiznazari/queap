@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Suggestion } from '.././core/models';
-import { PanelComponent } from '.././components/panel/panel.component';
+import { DialogComponent } from '.././components/dialog/dialog.component';
 import { SuggestionService } from '.././suggestion/suggestion.service';
 
 @Component({
@@ -19,24 +19,28 @@ export class PastSuggestionListComponent {
 		this.suggestions = this.service.listDiscarded();
 	}
 
-	viewSuggestion(id: number, viewSuggestionPanel: PanelComponent) {
+	viewSuggestion(id: number, viewSuggestionDialog: DialogComponent) {
 		this.activeSuggestion = this.service.find(id);
-		viewSuggestionPanel.open();
+		viewSuggestionDialog.open();
 	}
 
-	redoDiscard(viewSuggestionPanel: PanelComponent) {
+	redoDiscard(viewSuggestionDialog: DialogComponent) {
+		viewSuggestionDialog.close();
 		phonon.confirm('Tem certeza que deseja mover para "Sugestões"?', 'Mover sugestão', true, 'Sim', 'Cancelar')
 			.on('confirm', () => {
 				this.removeActiveSuggestion();
 				this.activeSuggestion.discarded = false;
 				this.service.save(this.activeSuggestion);
-				viewSuggestionPanel.close();
 			});
 	}
 
-	delete() {
-		this.service.delete(this.activeSuggestion);
-		this.removeActiveSuggestion();
+	delete(viewSuggestionDialog: DialogComponent) {
+		viewSuggestionDialog.close();
+		phonon.confirm('Tem certeza que deseja excluir?', 'Excluir registro', true, 'Sim', 'Cancelar')
+			.on('confirm', () => {
+				this.service.delete(this.activeSuggestion);
+				this.removeActiveSuggestion();
+			});
 	}
 
 	private removeActiveSuggestion() {

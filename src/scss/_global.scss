@@ -66,6 +66,15 @@ a {
 	}
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: normal;
+}
+
 // END COLORS
 // NAVIGATION
 
@@ -283,4 +292,55 @@ body {
 		font-size: 14px;
 	}
 
+}
+
+// RIPPLE EFFECT
+.ripple {
+	position: absolute;
+	width: 0;
+	height: 0;
+	transform: scale(0);
+	border-radius: 50%;
+	background: rgba(255, 255, 255, .4);
+	opacity: 1;
+}
+
+.ripple-effect {
+	animation: ripple-drop .6s linear;
+}
+
+.relative {
+	position: relative;
+}
+
+[data-ripple] {
+	overflow: hidden;
+
+	&.floating-action,
+	&.btn:not(.btn-flat),
+	&.persistent {
+		&:active {
+			.ripple-effect {
+				animation: ripple-persistent .6s forwards;
+			}
+		}
+
+		.ripple-effect {
+			animation: none;
+		}
+	}
+}
+
+@keyframes ripple-drop {
+	100% {
+		transform: scale(2);
+		opacity: 0;
+	}
+}
+
+@keyframes ripple-persistent {
+	100% {
+		transform: scale(2);
+		opacity: 1;
+	}
 }

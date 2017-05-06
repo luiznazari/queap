@@ -1,3 +1,16 @@
+/** The Queap Application constants */
+interface QueapApp {
+
+	/** Define the application's enviroment properties. */
+	properties: any;
+
+}
+
+declare const queap: QueapApp;
+declare module "queap" {
+    export = queap;
+}
+
 interface Event {
 
 	/**
@@ -81,9 +94,3 @@ interface log {
  * @return true if the variable is true, 'true', 1 or '1', false otherwise.
  */
 declare function parseBoolean(b: any): boolean;
-
-interface Window {
-
-	sqlitePlugin: any;
-	
-}
