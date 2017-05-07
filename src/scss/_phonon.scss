@@ -132,6 +132,33 @@
 	font-size: 14px;
 }
 
+.circle-progress {
+	background-color: transparent;
+
+	&.middle {
+		top: 46%;
+		left: 0;
+		margin: 0 auto;
+	}
+
+	&.bigger {
+		width: 72px;
+		height: 72px;
+
+		&.middle {
+			top: calc(50% - 32px);
+		}
+	}
+
+	&.active {
+		.spinner {
+			&.white {
+				border-color: $color-white transparent;
+			}
+		}
+	}
+}
+
 // Buttons
 
 a {

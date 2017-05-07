@@ -17,7 +17,9 @@
 			Globals JS and CSS must be declared in 'index.globals.json'.
 		-->
 
-		<link rel="icon" href="resources/img/favicon.ico">
+		<link rel="icon" href="resources/images/favicon.ico">
+		<link rel="icon" type="image/png" sizes="16x16" href="resources/images/favicon-16x16.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="resources/images/favicon-32x32.png">
 		<link rel="stylesheet" href="css/globals.min.css">
 		<link rel="stylesheet" href="css/styles.min.css">
 
@@ -31,7 +33,11 @@
 	</head>
 	<body>
 		<app>
-			<div class="content-loading"></div>
+			<div class="content-loading">
+				<div class="circle-progress active bigger middle">
+					<div class="spinner white"></div>
+				</div>
+			</div>
 		</app>
 
 		<script type="text/javascript" src="js/bundle.min.js"></script>

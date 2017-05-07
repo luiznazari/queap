@@ -1,32 +1,85 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="br.com.queap" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>Qual é a palavra</name>
-    <description>
+	<name>Qual é a palavra</name>
+	<description>
 		Aplicativo para anotação de sugestões de palavras para jogos de adivinhação
 	</description>
-    <author email="luiz.nazari.42@gmail.com" href="http://example.com/">
+	<author email="luiz.nazari.42@gmail.com" href="http://example.com/">
 		Luiz Felipe Nazari
 	</author>
-    <content src="index.html" />
-    <access origin="*" />
-    <preference name="webviewbounce" value="false" />
-    <preference name="UIWebViewBounce" value="false" />
-    <preference name="DisallowOverscroll" value="true" />
-    <preference name="SplashScreenDelay" value="2000" />
-    <preference name="FadeSplashScreenDuration" value="2000" />
-    <preference name="android-minSdkVersion" value="16" />
-    <preference name="BackupWebStorage" value="none" />
-    <allow-intent href="http://*/*" />
-    <allow-intent href="https://*/*" />
-    <allow-intent href="tel:*" />
-    <allow-intent href="sms:*" />
-    <allow-intent href="mailto:*" />
-    <allow-intent href="geo:*" />
-    <platform name="android">
-        <allow-intent href="market:*" />
-    </platform>
-    <platform name="ios">
-        <allow-intent href="itms:*" />
-        <allow-intent href="itms-apps:*" />
-    </platform>
+	<content src="index.html" />
+	<access origin="*" />
+	<preference name="webviewbounce" value="false" />
+	<preference name="UIWebViewBounce" value="false" />
+	<preference name="DisallowOverscroll" value="true" />
+	<preference name="SplashScreenDelay" value="2000" />
+	<preference name="FadeSplashScreenDuration" value="2000" />
+	<preference name="android-minSdkVersion" value="16" />
+	<preference name="BackupWebStorage" value="none" />
+	<allow-intent href="http://*/*" />
+	<allow-intent href="https://*/*" />
+	<allow-intent href="tel:*" />
+	<allow-intent href="sms:*" />
+	<allow-intent href="mailto:*" />
+	<allow-intent href="geo:*" />
+
+	<platform name="android">
+		<allow-intent href="market:*" />
+
+		<!--
+			ldpi    : 36x36 px
+			mdpi    : 48x48 px
+			hdpi    : 72x72 px
+			xhdpi   : 96x96 px
+			xxhdpi  : 144x144 px
+			xxxhdpi : 192x192 px
+		-->
+		<icon src="../.project/icons/android-icon-36x36.png" density="ldpi" />
+		<icon src="../.project/icons/android-icon-48x48.png" density="mdpi" />
+		<icon src="../.project/icons/android-icon-72x72.png" density="hdpi" />
+		<icon src="../.project/icons/android-icon-96x96.png" density="xhdpi" />
+	</platform>
+
+	<platform name="ios">
+		<allow-intent href="itms:*" />
+		<allow-intent href="itms-apps:*" />
+		
+		<!-- iOS 8.0+ -->
+		<!-- iPhone 6 Plus  -->
+		<!--<icon src="../.project/icons/apple-icon-180x180.png" width="180" height="180" />-->
+		<!-- iOS 7.0+ -->
+		<!-- iPhone / iPod Touch  -->
+		<icon src="../.project/icons/apple-icon-60x60.png" width="60" height="60" />
+		<icon src="../.project/icons/apple-icon-120x120.png" width="120" height="120" />
+		<!-- iPad -->
+		<icon src="../.project/icons/apple-icon-76x76.png" width="76" height="76" />
+		<!--<icon src="../.project/icons/apple-icon-152x152.png" width="152" height="152" />-->
+		<!-- iOS 6.1 -->
+		<!-- iPhone / iPod Touch -->
+		<!--<icon src="../.project/icons/apple-icon-57x57.png" width="57" height="57" />-->
+		<!--<icon src="../.project/icons/apple-icon-114x114.png" width="114" height="114" />-->
+		<!-- iPad -->
+		<!--<icon src="../.project/icons/apple-icon-72x72.png" width="72" height="72" />-->
+		<!--<icon src="../.project/icons/apple-icon-144x144.png" width="144" height="144" />-->
+		<!-- iPad Pro -->
+		<!--<icon src="../.project/icons/apple-icon-180x180.png" width="167" height="167" />-->
+	</platform>
+
+	<platform name="windows">
+		<!--
+			Icon name         240% ~ 140% ~ 100%
+			Square71×71Logo   170×170 ~ 99×99 ~ 71×71
+			Square150×150Logo 360×360 ~ 210×210 ~ 150×150
+			Wide310×150Logo   744×360 ~ 434×210 ~ 310×150
+			Square44×44Logo   106×106 ~ 62×62 ~ 44×44
+			StoreLogo         120×120 ~ 70×70 ~ 50×50
+			BadgeLogo         58×58 ~ 33×33 ~ 24×24
+			SplashScreen      1152×1920 ~ 672×1120 ~ 480×800
+		-->
+		<icon src="../.project/icons/ms-icon-50x50.png" target="StoreLogo" />
+		<icon src="../.project/icons/ms-icon-70x70.png" target="Square70x70Logo" />
+		<icon src="../.project/icons/ms-icon-150x150.png" target="Square150x150Logo" />
+		<icon src="../.project/icons/ms-icon-310x150.png" target="Square310x150Logo" />
+	</platform>
+
 </widget>
