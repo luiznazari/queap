@@ -10,12 +10,10 @@
 		"/public/js/localstoragedb.min.js",
 		"/src/js/**"
 	],
-
 	"styles": [
 		"phonon/dist/css/phonon.min.css",
 		"mdi/css/materialdesignicons.min.css"
 	],
-
 	"fonts": [
 		"/public/fonts/OpenSans-Bold.ttf",
 		"/public/fonts/OpenSans-Regular.ttf",

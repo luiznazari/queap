@@ -13,7 +13,7 @@ export class HintFormComponent implements OnInit {
 
 	hintForm: FormGroup;
  	hint: Hint;
-	autoLabel: boolean = false;
+	autoLabel: boolean = true;
 	private _hasRules: boolean = false;
 
 	constructor(private _service: HintService, private _route: ActivatedRoute, private _fb: FormBuilder) {

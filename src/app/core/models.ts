@@ -91,7 +91,7 @@ export class HintRule extends Entity implements IRule {
 		if (this.constraint.wordNumber === HintConstraint.ALL_TEXT) {
 			testText = text;
 
-		// NaN === NaN = false
+			// NaN === NaN = false
 		} else if (this.constraint.wordNumber.toString() === HintConstraint.LAST_WORD.toString()) {
 			let splitted = text.split(HintRule.WHITESPACE);
 			testText = splitted[splitted.length - 1];
@@ -195,7 +195,7 @@ export class Suggestion extends Entity {
 
 	constructor(public id: number = null, public label: string = '') {
 		super(id);
-		this.label  = label;
+		this.label = label;
 	}
 
 	isValid(): boolean {

@@ -2,10 +2,11 @@
 	"name": "client",
 	"dependencies": {},
 	"globalDependencies": {
+		"chai": "registry:dt/chai",
 		"node": "registry:dt/node",
+		"mocha": "registry:dt/mocha",
 		"jquery": "registry:dt/jquery",
 		"core-js": "registry:dt/core-js",
-		"jasmine": "registry:dt/jasmine",
 		"app": "file:./config/typings/app.d.ts",
 		"phonon": "file:./config/typings/phonon.d.ts",
 		"localStorageDB": "file:./config/typings/localstoragedb.d.ts"

@@ -53,13 +53,13 @@ export class DataBase {
 
 	private static _tables = [{
 		name: 'suggestion',
-		fields: [ field('label'), field('discarded', false) ]
+		fields: [field('label'), field('discarded', false)]
 	}, {
 		name: 'hint',
-		fields: [ field('label'), field('rules') ]
+		fields: [field('label'), field('rules')]
 	}];
 
-	private static _droppedTableNames: string[] = [ ];
+	private static _droppedTableNames: string[] = [];
 
 	private static migrateTable(tableName: string, fields: IField[]): boolean {
 		let tableChanged = false;
@@ -73,9 +73,9 @@ export class DataBase {
 
 			if (missingFields.length > 0) {
 				tableChanged = true;
-				let defaults = missingFields.map(field => {
+				let defaults = missingFields.map(missingField => {
 					let d = {};
-					d[field] = fields.find(f => f.name === field).defaultValue;
+					d[missingField] = fields.find(f => f.name === missingField).defaultValue;
 					return d;
 				});
 				this.db.alterTable(tableName, missingFields, defaults);
@@ -153,7 +153,7 @@ abstract class AbstractLocalStorageRepository<E extends Entity> implements IRepo
 		} else if (StringUtils.isNumber(query)) {
 			query = { query: this.queryId(query as number) };
 		}
-		return this.deserializeResult(DataBase.db.queryAll(this.tableName, query));
+		return this.deserializeResult(DataBase.db.queryAll(this.tableName, (query as localStorageDB_dynamicFields)));
 	}
 
 	// @Transactional()
@@ -169,9 +169,9 @@ abstract class AbstractLocalStorageRepository<E extends Entity> implements IRepo
 		});
 	}
 
-	protected queryId(entityId: E | number): {[T: string]: any} {
+	protected queryId(entityId: E | number): { [T: string]: any } {
 		let id = entityId instanceof Entity ? entityId.id : entityId;
-		return { ID : id };
+		return { ID: id };
 	}
 
 }
@@ -184,9 +184,9 @@ export class SuggestionRepository extends AbstractLocalStorageRepository<Suggest
 
 	_serialize(entity: Suggestion) {
 		return {
-			ID : entity.id,
-			label : entity.label,
-			discarded : entity.discarded,
+			ID: entity.id,
+			label: entity.label,
+			discarded: entity.discarded,
 		};
 	}
 
@@ -207,9 +207,9 @@ export class HintRepository extends AbstractLocalStorageRepository<Hint> {
 	_serialize(entity: Hint) {
 		let rulesList = entity.rules.map((rule: any) => this._serializeRule(rule));
 		return {
-			ID : entity.id,
-			label : entity.label,
-			rules : rulesList
+			ID: entity.id,
+			label: entity.label,
+			rules: rulesList
 		};
 	}
 
@@ -223,10 +223,10 @@ export class HintRepository extends AbstractLocalStorageRepository<Hint> {
 
 	_serializeRule(entity: HintRule) {
 		return {
-			ID : entity.id,
-			text : entity.text,
-			pattern : entity.pattern.name,
-			constraint : entity.constraint.name,
+			ID: entity.id,
+			text: entity.text,
+			pattern: entity.pattern.name,
+			constraint: entity.constraint.name,
 		};
 	}
 

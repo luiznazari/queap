@@ -9,7 +9,7 @@
 
 			<div class="form-elements">
 				<input formControlName="label" id="hintForm-label" [value]="composeLabel()"
-					name="label" placeholder="Título" type="text">
+					name="label" placeholder="Título" type="text" [class]=" autoLabel ? 'disabled' : '' ">
 
 				<label class="checkbox left">
 					<input formControlName="autoLabel" [(ngModel)]="autoLabel" (change)="toggleAutoLabel()" type="checkbox">
@@ -25,7 +25,8 @@
 				<div *ngFor="let rule of hintForm.controls.rules.controls; let i = index" [formGroupName]="i"
 					class="form-element">
 					<hint-form-rule [group]="hintForm.controls.rules.controls[i]" [index]="i"
-						(onDelete)="removeRule(i)"></hint-form-rule>
+						(onDelete)="removeRule(i)">
+					</hint-form-rule>
 				</div>
 				<a (click)="addRule()" class="btn btn-flat primary form-element">
 					<i class="mdi mdi-playlist-plus"></i> Nova regra

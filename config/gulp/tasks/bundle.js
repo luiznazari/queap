@@ -59,28 +59,24 @@ gulp.task('bundle:watch', function() {
 	return b.bundle();
 });
 
-function resolvePath(path) {
-	return path.startsWith('/') ? (paths.root + path) : (paths.appNodeModules + '/' + path);
-}
-
 // Concat and uglify golbal libraries.
 // Global libraries should not be imported into app's modules (eg.: main.ts).
 gulp.task('bundle:globals', function() {
 	let globals = require(paths.appSrc + "/index.globals.json");
 	
-	let scripts = (globals.scripts || []).map(script => resolvePath(script));
+	let scripts = (globals.scripts || []).map(script => utils.resolvePath(script));
 	gulp.src(scripts)
 		.pipe(concat('globals.min.js'))
 		.pipe(_if(GULP_ENV.prod, uglify()))
 		.pipe(gulp.dest(paths.appBuildResources + '/js'));
 
-	let styles = (globals.styles || []).map(style => resolvePath(style));
+	let styles = (globals.styles || []).map(style => utils.resolvePath(style));
 	gulp.src(styles)
 		.pipe(concat('globals.min.css'))
 		.pipe(_if(GULP_ENV.prod, cleanCSS()))
 		.pipe(gulp.dest(paths.appBuildResources + '/css'));
 
-	let fonts = (globals.fonts || []).map(font => resolvePath(font));
+	let fonts = (globals.fonts || []).map(font => utils.resolvePath(font));
 	gulp.src(fonts)
 		.pipe(gulp.dest(paths.appBuildResources + '/fonts'));
 });

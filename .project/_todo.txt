@@ -1,0 +1,7 @@
+Regras:
+ - Todo o texto possui mais de x palavras
+ - Todo o texto possui x palavras
+ - Todo o texto possui x letras y
+ - A n-ésima palavra mais de x letras
+ - A n-ésima palavra possui x letras
+ - A n-ésima palavra possui x letras y
