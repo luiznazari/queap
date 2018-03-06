@@ -4,6 +4,7 @@ package-lock.json
 
 # Tests
 coverage
+.nyc_output
 
 # Build
 /typings
