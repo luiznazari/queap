@@ -7,7 +7,7 @@
 		"types": [
 			"node"
 		],
-		"target": "es6",
+		"target": "es5",
 		"module": "commonjs",
 		"outDir": "mobile/www",
 		"moduleResolution": "node",
