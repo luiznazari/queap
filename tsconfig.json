@@ -5,7 +5,15 @@
 			"dom"
 		],
 		"types": [
-			"node"
+			"app",
+			"node",
+			"chai",
+			"mocha",
+			"phonon",
+			"localStorageDB"
+		],
+		"typeRoots": [
+			"./@types"
 		],
 		"target": "es5",
 		"module": "commonjs",

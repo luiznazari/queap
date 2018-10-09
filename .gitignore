@@ -1,14 +1,11 @@
 # Dependencies
 node_modules
-package-lock.json
 
 # Tests
 coverage
 .nyc_output
 
 # Build
-/typings
-!/config/typings
 *.js.map
 
 # Cordova
@@ -21,7 +18,6 @@ mobile/plugins/*/
 .env
 .idea
 .vscode
-typings
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*

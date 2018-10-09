@@ -59,16 +59,16 @@ Compila a aplicação e dependências e inicia um servidor na porta 8000. També
 
 Compila a aplicação com "perfil"  de *Produção* (minificação de arquivos e outras otimizações).
 
-### `npm run cordova-build`
+### `npm run cordova:build`
 
 Compila a aplicação com "perfils" *Produção* e *Cordova* (minificação de arquivos e outras otimizações).
 Realiza configurações específicas para build com Cordova.
 
-### `npm run cordova-emulate`
+### `npm run cordova:emulate`
 
 Inicializa o emulador na plataforma *Android* (depende do *cordova-build*).
 
-### `npm run cordova-full`
+### `npm run cordova`
 
 Executa os comandos *cordova-build* e *cordova-emulate* em sequência.
 

@@ -1,14 +1,17 @@
-/** The Queap Application constants */
+
+declare const queap: QueapApp;
+
+declare const log: Log;
+
+declare module "queap" {
+    export = queap;
+}
+
 interface QueapApp {
 
 	/** Define the application's enviroment properties. */
 	properties: any;
 
-}
-
-declare const queap: QueapApp;
-declare module "queap" {
-    export = queap;
 }
 
 interface Event {
@@ -24,7 +27,7 @@ interface Map<K, V> {
 
 	/**
 	 * Applies a function against an accumulator each element in the map and return a single result.
-	 * 
+	 *
 	 * @param reducingFunction Function to execute on each element on each entry in the map,
 	 * 			taking two arguments: <br><ul>
 	 * 			<li><b>accumulator:</b> The accumulator accumulates the reducingFunction's return values;
@@ -40,7 +43,7 @@ interface Map<K, V> {
 
 	/**
 	 * Applies a function against an accumulator and each entry in the map and return an array as result.
-	 * 
+	 *
 	 * @param reducingFunction Function to execute on each element on each entry in the map, taking
 	 * 			two arguments:<br><ul>
 	 * 			<li><b>accumulator:</b> The accumulator accumulates the reducingFunction's return values;
@@ -56,7 +59,7 @@ interface Map<K, V> {
 
 	/**
 	 * Transforms this map into an array, concatenating all values.
-	 * 
+	 *
 	 * @return an array containing all map's values.
 	 */
 	toArray(): V[];
@@ -67,7 +70,7 @@ interface Array<T> {
 
 	/**
 	 * Transforms this list into a map grouping the elements by an grouping function.
-	 * 
+	 *
 	 * @param groupingFunction: Function used to create a key based on an element,
 	 * 			taking one argument:<br><ul>
 	 * 			<li><b>element:</b> The current element being processed in the array.</li></ul>
@@ -77,7 +80,7 @@ interface Array<T> {
 
 }
 
-interface log {
+interface Log {
 
 	info(msg: string): void;
 
@@ -89,7 +92,7 @@ interface log {
 
 /**
  * Test a variable and return it's boolean value.
- * 
+ *
  * @param b the variable to be tested
  * @return true if the variable is true, 'true', 1 or '1', false otherwise.
  */

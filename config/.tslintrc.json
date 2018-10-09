@@ -60,7 +60,6 @@
 		"ordered-imports": false,
 		"linebreak-style": false,
 		"no-string-literal": false,
-		"no-unused-variable": true,
 		"no-internal-module": true,
 		"no-inferrable-types": false,
 		"no-shadowed-variable": true,
